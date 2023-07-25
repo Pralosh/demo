@@ -1,0 +1,49 @@
+<p>" Test Works! "</p>
+<p>{{ placeholder }}</p>
+<h2>{{ greetUser() }}</h2>
+
+<div class="Text-Box">
+    <input #textBox [disabled]="isDisabled" [id]="myId" type="text" placeholder="Example">
+    <button (click)="displayMessage(textBox.value)">Display</button>
+    <h3>{{ message }}</h3>
+</div>
+
+<h2 [class]="green">Testing Class Binding</h2>
+
+<h2 [ngClass]="logical">Testing ngClass</h2>
+
+<h2 [ngStyle]="specialStyle">Style Binding with ngStyle</h2>
+
+<div class="two-way-bind">
+    <input [(ngModel)]="text" type="text" placeholder="Text here">
+    <p>{{ text }} </p>
+</div>
+
+<!-- ngIf Directive -->
+<div *ngIf="firstName; then displayName; else displaySurname"></div>
+
+<ng-template #displayName>
+    <div id="FirstName">
+        <h3>Pralosh</h3>
+    </div>
+</ng-template>
+
+<ng-template #displaySurname>
+    <div id="Surname">
+        <h3>Rajbhandari</h3>
+    </div>
+</ng-template>
+
+<div class="change-button">
+    <button (click)="changeName()">Change Name</button>
+</div>
+
+<!-- ngIf Directive End -->
+
+<input #colorPicker type="text" placeholder="Check your color">
+<button (click)="setColor(colorPicker.value)">Check</button>
+
+<div [ngSwitch]="colorInput">
+    <div *ngSwitchCase="'RED'">You picked Red. It's in our palette.</div>
+    <div *ngSwitchDefault>Color is not in our palette.</div>
+</div>
